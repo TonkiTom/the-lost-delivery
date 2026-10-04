@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor if you plan to edit it.
+
+config_version=5
+
+[application]
+config/name="The Lost Delivery"
+run/main_scene="res://scenes/World.tscn"
+config/features=PackedStringArray("4.2")
+config/icon="res://icon.svg"
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[input]
+move_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"keycode":65,"physical_keycode":65,"unicode":97,"location":0)]
+}
+move_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"keycode":68,"physical_keycode":68,"unicode":100,"location":0)]
+}
+move_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"keycode":87,"physical_keycode":87,"unicode":119,"location":0)]
+}
+move_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"keycode":83,"physical_keycode":83,"unicode":115,"location":0)]
+}
+interact={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"keycode":69,"physical_keycode":69,"unicode":101,"location":0)]
+}
+
+[rendering]
+renderer/rendering_method="mobile"

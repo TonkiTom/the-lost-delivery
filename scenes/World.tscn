@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/World.gd" id="1_cu2u6"]
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="2_1wu5m"]
+[ext_resource type="PackedScene" path="res://scenes/NPC.tscn" id="3_8i0p4"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_cu2u6")
+
+[node name="Background" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720)
+color = Color(0.18, 0.22, 0.22, 1)
+
+[node name="TownGround" type="Polygon2D" parent="."]
+position = Vector2(70, 70)
+polygon = PackedVector2Array(0, 0, 1100, 0, 1100, 520, 0, 520)
+color = Color(0.34, 0.46, 0.38, 1)
+
+[node name="TownRoad" type="Polygon2D" parent="."]
+position = Vector2(180, 220)
+polygon = PackedVector2Array(0, 0, 760, 0, 760, 120, 0, 120)
+color = Color(0.45, 0.38, 0.28, 1)
+
+[node name="Gate" type="Polygon2D" parent="."]
+position = Vector2(880, 230)
+polygon = PackedVector2Array(0, 0, 30, 0, 30, 180, 0, 180)
+color = Color(0.34, 0.37, 0.45, 1)
+
+[node name="RuneSwitch" type="Polygon2D" parent="."]
+position = Vector2(560, 180)
+polygon = PackedVector2Array(-18, -18, 18, -18, 18, 18, -18, 18)
+color = Color(0.82, 0.88, 0.3, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_1wu5m")]
+position = Vector2(120, 300)
+
+[node name="Mira" parent="." instance=ExtResource("3_8i0p4")]
+position = Vector2(190, 280)
+
+[node name="Bram" parent="." instance=ExtResource("3_8i0p4")]
+position = Vector2(1040, 320)
+
+[node name="Gilda" parent="." instance=ExtResource("3_8i0p4")]
+position = Vector2(900, 480)
+
+[node name="OldTobin" parent="." instance=ExtResource("3_8i0p4")]
+position = Vector2(320, 520)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 1
+
+[node name="BackDrop" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 160.0
+color = Color(0.1, 0.1, 0.1, 0.74)
+
+[node name="QuestTitle" type="Label" parent="CanvasLayer"]
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 520.0
+offset_bottom = 60.0
+text = "Quest"
+label_settings = null
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestText" type="Label" parent="CanvasLayer"]
+offset_left = 24.0
+offset_top = 52.0
+offset_right = 520.0
+offset_bottom = 96.0
+text = "Bring Moon Tea to Mira."
+label_settings = null
+
+[node name="Hint" type="Label" parent="CanvasLayer"]
+offset_left = 24.0
+offset_top = 108.0
+offset_right = 520.0
+offset_bottom = 142.0
+text = "Explore the town and talk to people."
+label_settings = null
+
+[node name="Status" type="Label" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -620.0
+offset_top = 28.0
+offset_right = -28.0
+offset_bottom = 120.0
+text = "The town is waiting."
+label_settings = null
+horizontal_alignment = 2
